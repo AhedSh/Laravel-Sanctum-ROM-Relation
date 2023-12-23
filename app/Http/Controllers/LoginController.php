@@ -95,8 +95,11 @@ class LoginController extends Controller
             return $users;
           }
 
-
-    
+          public function logout(Request $request)
+          {
+              $user = $request->user();
+              $user->tokens()->delete();
+          }
       
     
 }

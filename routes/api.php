@@ -34,7 +34,7 @@ Route::middleware('auth:sanctum')->get("GetProduct" ,[ProductController::class ,
 Route::post("Register" ,[LoginController::class ,'Register']);
 Route::post("Login" ,[LoginController::class ,'Login']);
 Route::middleware('auth:sanctum')->get("refresh" ,[LoginController::class ,'refresh']);
-
+Route::middleware('auth:sanctum')->get("logout" ,[LoginController::class ,'logout']);
 //Route::middleware(['auth:sanctum' ,'Admin'])->get('users' ,[LoginController::class ,'users']) ;
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
